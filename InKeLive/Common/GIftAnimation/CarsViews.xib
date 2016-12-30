@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CarsViews">
+            <rect key="frame" x="0.0" y="0.0" width="166" height="70"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1.png" translatesAutoresizingMaskIntoConstraints="NO" id="A02-qc-y9f">
+                    <rect key="frame" x="0.0" y="0.0" width="166" height="70"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="porche-light.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZS9-tC-faE">
+                    <rect key="frame" x="107" y="13" width="47" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="porche-f1.png" translatesAutoresizingMaskIntoConstraints="NO" id="ut7-pi-obq">
+                    <rect key="frame" x="58" y="29" width="22" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="porche-b1.png" translatesAutoresizingMaskIntoConstraints="NO" id="cU6-iE-ZlG">
+                    <rect key="frame" x="4" y="14" width="11" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="afterWheel" destination="ut7-pi-obq" id="Czu-1r-ufk"/>
+                <outlet property="beforeWheel" destination="cU6-iE-ZlG" id="u6W-XV-HQ6"/>
+                <outlet property="carBackImage" destination="A02-qc-y9f" id="JOt-N2-gmG"/>
+                <outlet property="light" destination="ZS9-tC-faE" id="CaC-qm-vlx"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="1.png" width="494" height="232"/>
+        <image name="porche-b1.png" width="35" height="67"/>
+        <image name="porche-f1.png" width="67" height="93"/>
+        <image name="porche-light.png" width="478" height="500"/>
+    </resources>
+</document>
