@@ -18,6 +18,7 @@
 #import "PresentView.h"
 #import "GIftCell.h"
 #import "PresentModel.h"
+#import "SendGiftView.h"
 
 @interface LiveViewController : UIViewController
 
@@ -42,7 +43,7 @@
 @property (nonatomic,strong)NSMutableArray *giftArr;
 
 //礼物栏
-@property (nonatomic, strong)GiftView *giftView;
+@property (nonatomic, strong)SendGiftView *giftView;
 
 //聊天输入框
 @property (nonatomic, strong) KeyBoardInputView *keyBoardView;

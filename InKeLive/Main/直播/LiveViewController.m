@@ -737,9 +737,9 @@
 }
 
 //弹出来礼物视图
-- (GiftView *)giftView{
+- (SendGiftView *)giftView{
     if (!_giftView) {
-        _giftView = [[GiftView alloc]initWithFrame:self.view.bounds];
+        _giftView = [[SendGiftView alloc]initWithFrame:self.view.bounds];
     }
     return _giftView;
 }

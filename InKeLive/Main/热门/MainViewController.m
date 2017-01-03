@@ -15,7 +15,7 @@
 #import "MJAnimHeader.h"
 
 // 映客接口
-#define INKeUrl [NSString stringWithFormat:@"http://service.ingkee.com/api/live/gettop?imsi=&uid=17800399&proto=5&idfa=A1205EB8-0C9A-4131-A2A2-27B9A1E06622&lc=0000000000000026&cc=TG0001&imei=&sid=20i0a3GAvc8ykfClKMAen8WNeIBKrUwgdG9whVJ0ljXi1Af8hQci3&cv=IK3.1.00_Iphone&devi=bcb94097c7a3f3314be284c8a5be2aaeae66d6ab&conn=Wifi&ua=iPhone&idfv=DEBAD23B-7C6A-4251-B8AF-A95910B778B7&osversion=ios_9.300000&count=5&multiaddr=1"]
+#define INKeUrl [NSString stringWithFormat:@"http://service.inke.com/api/live/gettop?lc=0000000000000045&cc=TG0001&cv=IK3.8.30_Iphone&proto=7&idfa=768901CC-814F-4358-8F71-F54BA16B251A&idfv=F5B7A445-841C-4D49-A4DB-887B9D31BDDB&devi=03b0ccddf1a8112717b7533d089d9bb448c50e6e&osversion=ios_10.000000&ua=iPhone8_1&imei=&imsi=&uid=139587564&sid=200JUbbvFT8FKXtTjZlDyh9VsrEF8uRAPSt3B8oMi2F4i0k0gsjA&conn=wifi&mtid=cef7f9ee1bbc1d9f01921eea68b0218a&mtxid=d4ee73ae06c&logid=133,5,124&count=5&multiaddr=1&s_sg=ec6dd66c26acc0cbd70caf2099810430&s_sc=100&s_st=1483420987"]
 
 
 @interface MainViewController ()<UITableViewDelegate,UITableViewDataSource>

@@ -39,7 +39,12 @@
         self.distanceLabel.text = [NSString stringWithFormat:@"%@",nearModel.distance];
     } else {
         //距离远的只显示城市
-        self.distanceLabel.text = [NSString stringWithFormat:@"%@",nearModel.city];
+        if (nearModel.city.length > 0) {
+            self.distanceLabel.text = [NSString stringWithFormat:@"%@",nearModel.city];
+        } else {
+            //没有显示火星
+            self.distanceLabel.text = [NSString stringWithFormat:@"火星"];
+        }
     }
 }
 
