@@ -88,6 +88,9 @@
         }
             break;
         default:
+            [self createDynamic];
+            [self.presentView insertPresentMessages:@[self.giftArr[1]] showShakeAnimation:YES];
+            break;
             break;
     }
 }

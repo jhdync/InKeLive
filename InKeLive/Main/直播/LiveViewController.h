@@ -26,7 +26,7 @@
 //底部工具栏
 @property (nonatomic ,strong)BottomView *bottomTool;
 
-   
+
 @property (nonatomic, strong)LivingItem *livingItem;
 
 //顶部区域

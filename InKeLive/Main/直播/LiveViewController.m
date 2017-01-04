@@ -53,7 +53,7 @@
     [self creatUI];
     
     //拉流
-//    [self getAdress];
+    //    [self getAdress];
     [self repareStartPlay];
     //RTC连麦
     [self prepareRtc];
@@ -101,7 +101,7 @@
 
 /**
  游客加入RTC回调
-
+ 
  @param code 0成功
  @param strReason 原因
  */
@@ -119,7 +119,7 @@
 
 /**
  游客申请与主播连麦回调
-
+ 
  @param code 0成功
  */
 - (void)OnRTCApplyLineResult:(int) code{
@@ -152,19 +152,19 @@
 
 /**
  其他游客连麦主播的回调
-
+ 
  @param strLivePeerID 其他游客在RTMPC服务的ID
  @param strCustomID 其他游客在自己平台的用户ID
  @param strUserData 其他游客在自己平台的一些相关信息
  */
 - (void)OnRTCOtherLineOpen:(NSString*)strLivePeerID withCustomID:(NSString*)strCustomID withUserData:(NSString*)strUserData{
-
+    
 }
 
 
 /**
  得到其他游客关闭连麦的回调
-
+ 
  @param strLivePeerID 其他游客在RTMPC服务的ID
  */
 - (void)OnRTCOtherLineClose:(NSString*)strLivePeerID{
@@ -204,7 +204,7 @@
 
 /**
  游客关闭RTC服务的回调
-
+ 
  @param code 0成功
  @param strReason 原因
  */
@@ -224,7 +224,7 @@
 
 /**
  游客得到主播同意其他游客连麦请求后的回调，用于显示其他游客视频窗口
-
+ 
  @param strLivePeerID 其他游客在RTMPC服务的ID
  */
 - (void)OnRTCOpenVideoRender:(NSString*)strLivePeerID{
@@ -335,7 +335,7 @@
     //送礼物
     WEAKSELF;
     [self.giftView setGiftClick:^(NSInteger tag) {
-        [weakSelf chooseGift:tag];
+        [weakSelf chooseGift:tag + 100];
     }];
     //显示底部工具栏
     [self.giftView setGrayClick:^{
@@ -408,15 +408,15 @@
     //只支持rtmp流
     if (!self.livingItem) {
         //假数据  rtmp://live.hkstv.hk.lxdns.com/live/hks
-         [self.guestKit StartRtmpPlay:@"rtmp://live.hkstv.hk.lxdns.com/live/hks" andRender:self.showView];
+        [self.guestKit StartRtmpPlay:@"rtmp://live.hkstv.hk.lxdns.com/live/hks" andRender:self.showView];
     } else{
         //如果有两部手机运行，且创建项目，可实现实时推流、拉流
         [self.guestKit StartRtmpPlay:self.livingItem.rtmp_url andRender:self.showView];
     }
     
-//    [self.guestKit StartRtmpPlay:self.adressStr andRender:self.showView];
-//    [self.guestKit setVideoContentMode:VideoShowModeScaleAspectFill];
-
+    //    [self.guestKit StartRtmpPlay:self.adressStr andRender:self.showView];
+    //    [self.guestKit setVideoContentMode:VideoShowModeScaleAspectFill];
+    
 }
 
 #pragma RTMPCGuestRtmpDelegate
@@ -452,7 +452,7 @@
 }
 
 - (BottomView *)bottomTool{
-   
+    
     if (_bottomTool == nil) {
         _bottomTool = [[BottomView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - 64, SCREEN_WIDTH, 64)];
         WEAKSELF;
@@ -469,9 +469,9 @@
                 case 101:
                     //礼物
                 {
-                     [weakSelf bottomToolPosition];
+                    [weakSelf bottomToolPosition];
                 }
-                   
+                    
                     break;
                 case 102:
                     //显示分享面板

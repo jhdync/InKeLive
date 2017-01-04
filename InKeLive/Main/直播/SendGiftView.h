@@ -7,15 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GiftViewCell.h"
 
-@interface SendGiftView : UIView<UIScrollViewDelegate>{
+@interface SendGiftView : UIView<UIScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>{
     UIPageControl *_pageControl;
+    //礼物标记
+    NSInteger _reuse;
 }
 
-//顶部scrollView
-@property (nonatomic,strong)UIScrollView *giftScrollView;
+//礼物栏
+@property (nonatomic,strong)UICollectionView *giftCollectionView;
 
-//底部充值
+//底部充值  发送
 @property (nonatomic,strong)UIView *rechargeView;
 
 //充值按钮
@@ -29,6 +32,8 @@
 @property (nonatomic,copy)void (^giftClick)(NSInteger tag);
 
 @property (nonatomic,copy)void (^grayClick)();
+
+@property (nonatomic,strong)NSMutableArray *dataArr;
 
 - (void)popShow;
 

@@ -1,19 +1,20 @@
 //
-//  GIftViews.m
+//  GiftViewCell.m
 //  InKeLive
 //
-//  Created by 1 on 2017/1/3.
+//  Created by 1 on 2017/1/4.
 //  Copyright © 2017年 jh. All rights reserved.
 //
 
-#import "GIftViews.h"
+#import "GiftViewCell.h"
 
-@implementation GIftViews
+@implementation GiftViewCell
 
-- (instancetype)initWithFrame:(CGRect)frame imageStr:(NSString *)str{
+- (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
+        self.backgroundColor = RGBA(0, 0, 0, 0.3);
+        self.giftImageView.image = [UIImage imageNamed:@"1"];
         [self setSubViews];
-        self.giftImageView.image = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:str ofType:@"png"]];
     }
     return self;
 }

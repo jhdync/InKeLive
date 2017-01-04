@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6302FD591E1B36F0007122D3 /* SendGiftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6302FD581E1B36F0007122D3 /* SendGiftView.m */; };
-		6302FD5C1E1B4EF2007122D3 /* GIftViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 6302FD5B1E1B4EF2007122D3 /* GIftViews.m */; };
 		6302FD921E1B89BD007122D3 /* yipitiezhiNormal.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6302FD911E1B89BD007122D3 /* yipitiezhiNormal.bundle */; };
 		6302FDF31E1B9DD9007122D3 /* yipitiezhi01.png in Resources */ = {isa = PBXBuildFile; fileRef = 6302FDC31E1B9DD9007122D3 /* yipitiezhi01.png */; };
 		6302FDF41E1B9DD9007122D3 /* yipitiezhi001.png in Resources */ = {isa = PBXBuildFile; fileRef = 6302FDC41E1B9DD9007122D3 /* yipitiezhi001.png */; };
@@ -128,6 +126,9 @@
 		633E2DFC1E1CA6500049C9E8 /* NearHeadReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 633E2DFA1E1CA6500049C9E8 /* NearHeadReusableView.m */; };
 		633E2DFD1E1CA6500049C9E8 /* NearHeadReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633E2DFB1E1CA6500049C9E8 /* NearHeadReusableView.xib */; };
 		633E2DFF1E1CBE860049C9E8 /* Candara.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 633E2DFE1E1CBDE10049C9E8 /* Candara.ttf */; };
+		633E2E0A1E1CF9050049C9E8 /* SendGiftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 633E2E071E1CF9050049C9E8 /* SendGiftView.m */; };
+		633E2E0B1E1CF9050049C9E8 /* GiftViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 633E2E091E1CF9050049C9E8 /* GiftViewCell.m */; };
+		633E2E0E1E1CF9430049C9E8 /* FlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 633E2E0C1E1CF9430049C9E8 /* FlowLayout.m */; };
 		63402ED91E1244DD002F6661 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63402ED81E1244DD002F6661 /* MainViewController.m */; };
 		63402EDF1E124534002F6661 /* NearbyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63402EDD1E124534002F6661 /* NearbyController.m */; };
 		63402EF11E124611002F6661 /* NearModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63402EF01E124611002F6661 /* NearModel.m */; };
@@ -266,10 +267,6 @@
 
 /* Begin PBXFileReference section */
 		01E3CD2407DC19A4549C7CFD /* Pods-InKeLive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InKeLive.release.xcconfig"; path = "Pods/Target Support Files/Pods-InKeLive/Pods-InKeLive.release.xcconfig"; sourceTree = "<group>"; };
-		6302FD571E1B36F0007122D3 /* SendGiftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendGiftView.h; sourceTree = "<group>"; };
-		6302FD581E1B36F0007122D3 /* SendGiftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendGiftView.m; sourceTree = "<group>"; };
-		6302FD5A1E1B4EF2007122D3 /* GIftViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GIftViews.h; sourceTree = "<group>"; };
-		6302FD5B1E1B4EF2007122D3 /* GIftViews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIftViews.m; sourceTree = "<group>"; };
 		6302FD911E1B89BD007122D3 /* yipitiezhiNormal.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = yipitiezhiNormal.bundle; sourceTree = "<group>"; };
 		6302FDC31E1B9DD9007122D3 /* yipitiezhi01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yipitiezhi01.png; sourceTree = "<group>"; };
 		6302FDC41E1B9DD9007122D3 /* yipitiezhi001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yipitiezhi001.png; sourceTree = "<group>"; };
@@ -420,6 +417,12 @@
 		633E2DFA1E1CA6500049C9E8 /* NearHeadReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearHeadReusableView.m; sourceTree = "<group>"; };
 		633E2DFB1E1CA6500049C9E8 /* NearHeadReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearHeadReusableView.xib; sourceTree = "<group>"; };
 		633E2DFE1E1CBDE10049C9E8 /* Candara.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Candara.ttf; sourceTree = "<group>"; };
+		633E2E061E1CF9050049C9E8 /* SendGiftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendGiftView.h; sourceTree = "<group>"; };
+		633E2E071E1CF9050049C9E8 /* SendGiftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendGiftView.m; sourceTree = "<group>"; };
+		633E2E081E1CF9050049C9E8 /* GiftViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftViewCell.h; sourceTree = "<group>"; };
+		633E2E091E1CF9050049C9E8 /* GiftViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftViewCell.m; sourceTree = "<group>"; };
+		633E2E0C1E1CF9430049C9E8 /* FlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowLayout.m; sourceTree = "<group>"; };
+		633E2E0D1E1CF9430049C9E8 /* FlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowLayout.h; sourceTree = "<group>"; };
 		63402ED71E1244DD002F6661 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		63402ED81E1244DD002F6661 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		63402EDD1E124534002F6661 /* NearbyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyController.m; sourceTree = "<group>"; };
@@ -888,10 +891,12 @@
 				63402F1A1E124819002F6661 /* GIftCell.m */,
 				63402F1D1E124ADD002F6661 /* EmptyView.h */,
 				63402F1E1E124ADD002F6661 /* EmptyView.m */,
-				6302FD571E1B36F0007122D3 /* SendGiftView.h */,
-				6302FD581E1B36F0007122D3 /* SendGiftView.m */,
-				6302FD5A1E1B4EF2007122D3 /* GIftViews.h */,
-				6302FD5B1E1B4EF2007122D3 /* GIftViews.m */,
+				633E2E061E1CF9050049C9E8 /* SendGiftView.h */,
+				633E2E071E1CF9050049C9E8 /* SendGiftView.m */,
+				633E2E081E1CF9050049C9E8 /* GiftViewCell.h */,
+				633E2E091E1CF9050049C9E8 /* GiftViewCell.m */,
+				633E2E0C1E1CF9430049C9E8 /* FlowLayout.m */,
+				633E2E0D1E1CF9430049C9E8 /* FlowLayout.h */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1622,19 +1627,19 @@
 				633D8D7B1E0791B20087BD77 /* TYTextContainer.m in Sources */,
 				633D8D7A1E0791B20087BD77 /* TYTextContainer+Extended.m in Sources */,
 				633282121E024C8600EC018B /* GifViews.m in Sources */,
+				633E2E0A1E1CF9050049C9E8 /* SendGiftView.m in Sources */,
 				63402ED91E1244DD002F6661 /* MainViewController.m in Sources */,
-				6302FD591E1B36F0007122D3 /* SendGiftView.m in Sources */,
 				6314834E1E15FFF800EB5294 /* LivingItem.m in Sources */,
 				63FB93971E0378E500C8A84A /* NHPlaneViews.m in Sources */,
 				63402F1C1E124819002F6661 /* GIftCell.m in Sources */,
 				63402EDF1E124534002F6661 /* NearbyController.m in Sources */,
 				6357A6281DFE4DB1001E77AF /* UIView+Frame.m in Sources */,
+				633E2E0E1E1CF9430049C9E8 /* FlowLayout.m in Sources */,
 				633D8D751E0791B20087BD77 /* TYAttributedLabel.m in Sources */,
 				63402F041E12474A002F6661 /* TopTitleView.m in Sources */,
 				632CCB4F1E0B74710040B9EB /* PresentView.m in Sources */,
 				63A335201E0275B600027174 /* RocketViews.m in Sources */,
 				633D8D5C1E0790AF0087BD77 /* DanmuItem.m in Sources */,
-				6302FD5C1E1B4EF2007122D3 /* GIftViews.m in Sources */,
 				63402EF11E124611002F6661 /* NearModel.m in Sources */,
 				635B5E671E00D04D00E62E7A /* UIButton+ImageTitleSpacing.m in Sources */,
 				63A334FB1E0269AF00027174 /* CarsViews.m in Sources */,
@@ -1657,6 +1662,7 @@
 				6357A61F1DFE4C9F001E77AF /* PersonViewController.m in Sources */,
 				633D8D991E0796010087BD77 /* CustomSwitch.m in Sources */,
 				63402F1F1E124ADD002F6661 /* EmptyView.m in Sources */,
+				633E2E0B1E1CF9050049C9E8 /* GiftViewCell.m in Sources */,
 				633D8D781E0791B20087BD77 /* TYImageStorage.m in Sources */,
 				635AD6281E08D79D00D3F613 /* DMHeartFlyView.m in Sources */,
 				63402F0A1E1247D7002F6661 /* InKeCell.m in Sources */,

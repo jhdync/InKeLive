@@ -8,7 +8,7 @@
 
 #import "SendGiftView.h"
 #import "MyControlTool.h"
-#import "GIftViews.h"
+#import "FlowLayout.h"
 
 #define GifGetY SCREEN_HEIGHT - 280
 #define Collor_Simple RGBA(0, 0, 0, 0.58)
@@ -25,75 +25,13 @@
 
 - (void)setSubViews{
     [self.rechargeView addSubview:self.pageControl];
-    [self addSubview:self.giftScrollView];
+    [self addSubview:self.giftCollectionView];
     [self addSubview:self.rechargeView];
     [self.rechargeView addSubview:self.rechargeButton];
     [self.rechargeView addSubview:self.senderButton];
-    
-    
-    for (NSInteger i = 0; i < 24; i++) {
-        NSString *imagePath=[NSString stringWithFormat:@"yipitiezhi0%zd",i + 1];
-        if ((i/4)%2 == 0) {
-            GIftViews *upButton = [[GIftViews alloc]initWithFrame:CGRectMake((i%4) * SCREEN_WIDTH/4 + (i/8) * SCREEN_WIDTH, 0, SCREEN_WIDTH/4, 110) imageStr:imagePath];
-            upButton.tag = 100 + i;
-            //显示边线
-            if (i%2 == 0) {
-                upButton.backgroundColor = Collor_Simple;
-            } else {
-                upButton.backgroundColor = Collor_Deep;
-            }
-            [self.giftScrollView addSubview:upButton];
-            
-            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(giftViewClick:)];
-            [upButton addGestureRecognizer:tap];
-            
-            UIView *singleTagView = [tap view];
-            singleTagView.tag = 100 + i;
-            
-        } else {
-             GIftViews *downButton = [[GIftViews alloc]initWithFrame:CGRectMake((i%4) * SCREEN_WIDTH/4 + (i/8) * SCREEN_WIDTH, 110, SCREEN_WIDTH/4, 110) imageStr:imagePath];
-            downButton.tag = 100 + i;
-            //显示边线
-            if (i%2 != 0) {
-                downButton.backgroundColor = Collor_Simple;
-            } else {
-                downButton.backgroundColor = Collor_Deep;
-            }
-            [self.giftScrollView addSubview:downButton];
-            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(giftViewClick:)];
-            [downButton addGestureRecognizer:tap];
-            
-            UIView *singleTagView = [tap view];
-            singleTagView.tag = 100 + i;
-        }
-    }
-
 }
 
-- (void)giftViewClick:(UITapGestureRecognizer *)tap{
-    GIftViews *giftView = [self viewWithTag:[tap view].tag];
-    //同一个选中
-    if (giftView.hitButton.selected) {
-        giftView.hitButton.selected = NO;
-        self.senderButton.backgroundColor = [UIColor grayColor];
-        self.senderButton.enabled = NO;
-        return;
-    }
-    //不同选中
-    for (GIftViews *view in self.giftScrollView.subviews) {
-        if (view.hitButton.selected) {
-            view.hitButton.selected = NO;
-        }
-    }
-    giftView.hitButton.selected = YES;
-    self.senderButton.backgroundColor = RGB(36, 215, 200);
-    self.senderButton.tag = giftView.tag;
-    self.senderButton.enabled = YES;
-}
-
-
-
-//弹出礼物框
+//弹出礼物
 - (void)popShow{
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     [keyWindow addSubview:self];
@@ -101,13 +39,13 @@
 
 //点击上方灰色区域移除视图
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    if (self.grayClick) {
-        self.grayClick();
-    }
     NSSet *allTouches = [event allTouches];
     UITouch *touch = [allTouches anyObject];
     CGPoint point = [touch locationInView:self];
     if ( point.y < GifGetY) {
+        if (self.grayClick) {
+            self.grayClick();
+        }
         [self removeFromSuperview];
     }
 }
@@ -120,20 +58,70 @@
     self.pageControl.currentPage = page;
 }
 
+#pragma
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return 24;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    GiftViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RegisterId" forIndexPath:indexPath];
+    if (self.dataArr.count > 0) {
+        cell.giftImageView.image = [UIImage imageNamed:self.dataArr[indexPath.row]];
+        if (_reuse == indexPath.row) {
+            cell.hitButton.selected = YES;
+        } else {
+            cell.hitButton.selected = NO;
+        }
+    }
+    return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    GiftViewCell *cell = (GiftViewCell *)[self.giftCollectionView cellForItemAtIndexPath:indexPath];
+    if (!cell.hitButton.selected) {
+        for (UIView *view in self.giftCollectionView.subviews) {
+            //遍历所有cell，重置为未连击状态
+            if ([view isKindOfClass:[GiftViewCell class]]) {
+                GiftViewCell *cell = (GiftViewCell *)view;
+                cell.hitButton.selected = NO;
+            }
+        }
+        cell.hitButton.selected = YES;
+        //可以发送礼物
+        self.senderButton.backgroundColor = RGB(36, 215, 200);
+        self.senderButton.enabled = YES;
+        _reuse = indexPath.row;
+    } else {
+        cell.hitButton.selected = NO;
+        //未有选中，禁用发送按钮
+        self.senderButton.backgroundColor = [UIColor grayColor];
+        self.senderButton.enabled = NO;
+        _reuse = 100;
+        return;
+    }
+}
+
 
 #pragma 加载
 //滑动
-- (UIScrollView *)giftScrollView{
-    if (!_giftScrollView) {
-        _giftScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, GifGetY, SCREEN_WIDTH, 220)];
-        _giftScrollView.pagingEnabled = YES;
-        _giftScrollView.delegate = self;
-        _giftScrollView.bounces = NO;
-        _giftScrollView.showsVerticalScrollIndicator = NO;
-        _giftScrollView.showsHorizontalScrollIndicator = NO;
-        _giftScrollView.contentSize = CGSizeMake(SCREEN_WIDTH * 3, 0);
+- (UICollectionView *)giftCollectionView{
+    if (!_giftCollectionView) {
+        FlowLayout *flowLay = [[FlowLayout alloc]init];
+        flowLay.minimumLineSpacing = 0;
+        flowLay.minimumInteritemSpacing = 0;
+        flowLay.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        flowLay.itemSize = CGSizeMake(SCREEN_WIDTH/4, 110);
+        
+        _giftCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, GifGetY, SCREEN_WIDTH, 220) collectionViewLayout:flowLay];
+        _giftCollectionView.backgroundColor = RGBA(0, 0, 0, 0.3);
+        _giftCollectionView.bounces = NO;
+        _giftCollectionView.delegate = self;
+        _giftCollectionView.dataSource = self;
+        _giftCollectionView.pagingEnabled = YES;
+        
+        [_giftCollectionView registerClass:[GiftViewCell class] forCellWithReuseIdentifier:@"RegisterId"];
     }
-    return _giftScrollView;
+    return _giftCollectionView;
 }
 
 //底部
@@ -159,9 +147,8 @@
 - (UIButton *)senderButton{
     if (!_senderButton) {
         _senderButton = [MyControlTool buttonWithText:@"发送" textColor:[UIColor whiteColor] font:17 tag:0 frame:CGRectMake(SCREEN_WIDTH - 70, 17, 60, 26) clickBlock:^(id x) {
-            UIButton *sender = (UIButton *)x;
             if (self.giftClick) {
-                self.giftClick(sender.tag);
+                self.giftClick(_reuse);
             }
         }];
         _senderButton.layer.cornerRadius = 12;
@@ -181,6 +168,18 @@
         [_pageControl setPageIndicatorTintColor:[UIColor grayColor]];
     }
     return _pageControl;
+}
+
+//礼物图片
+- (NSMutableArray *)dataArr{
+    if (!_dataArr) {
+        _dataArr = [NSMutableArray array];
+        for (NSInteger i = 0; i < 24; i++) {
+            NSString *imagePath=[NSString stringWithFormat:@"yipitiezhi0%zd",i + 1];
+            [_dataArr addObject:imagePath];
+        }
+    }
+    return _dataArr;
 }
 
 
