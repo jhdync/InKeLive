@@ -69,5 +69,9 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Candara.ttf</string>
+	</array>
 </dict>
 </plist>

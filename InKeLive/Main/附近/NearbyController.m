@@ -18,6 +18,7 @@
 #define SideWh (SCREEN_WIDTH - 2 * margin)/3
 #define Ratio 1.3
 
+//定义变量用于存储原设置
 static BOOL SDImageCacheOldShouldDecompressImages = YES;
 static BOOL SDImagedownloderOldShouldDecompressImages = YES;
 
@@ -34,11 +35,16 @@ static NSString * identifier = @"NearById";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    //定位成功只刷新一次
     index = 0;
+    //默认查看全部
+    _limitStr = @"看全部";
+    
      [self.view addSubview:self.nearCollectView];
     [self.locationManager startUpdatingLocation];
     self.view.backgroundColor = [UIColor whiteColor];
     
+    //保存原设置，禁用解压缩
     SDImageCache *canche = [SDImageCache sharedImageCache];
     SDImageCacheOldShouldDecompressImages = canche.shouldDecompressImages;
     canche.shouldDecompressImages = NO;
@@ -99,20 +105,32 @@ static NSString * identifier = @"NearById";
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
     NearCell *nearCell = (NearCell *)cell;
     [nearCell showAnimation];
-    
 }
 
-- (CLLocationManager *)locationManager{
-    if (!_locationManager) {
-        //创建定位对象
-        _locationManager = [[CLLocationManager alloc] init];
-        _locationManager.delegate = self;
-        _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        _locationManager.distanceFilter =100.0;
-        [_locationManager requestWhenInUseAuthorization];
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    UICollectionReusableView *reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"NearHeadReusableViewId" forIndexPath:indexPath];
+    
+    if ([reusableView isKindOfClass:[NearHeadReusableView class]]) {
+        NearHeadReusableView *headView = (NearHeadReusableView *)reusableView;
+        [headView.chooseButton setTitle:_limitStr forState:UIControlStateNormal];
+        WEAKSELF;
+        [headView setChooseCondition:^{
+            [weakSelf setUpAcition];
+        }];
     }
-    return _locationManager;
+    
+    return reusableView;
 }
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    return CGSizeMake(SCREEN_WIDTH, 50);
+}
+
+//选择限制条件
+- (void)setUpAcition{
+    [self.actionSheet showInView:self.view];
+}
+
 
 #pragma CLLocationManagerDelegate
 //定位成功
@@ -134,7 +152,50 @@ static NSString * identifier = @"NearById";
     [self setUpLocation];
 }
 
+#pragma UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    //限制条件未知  0为查看全部  1查看女生  2为男生
+    NSString *limitStr = [NSString stringWithFormat:@"&interest=%zd",buttonIndex];
+
+    if ([self.requestUrl rangeOfString:@"&interest"].location == NSNotFound) {
+         self.requestUrl = [NSString stringWithFormat:@"%@%@",self.requestUrl,limitStr];
+    } else {
+        NSArray *arr = [self.requestUrl componentsSeparatedByString:@"&interest"];
+        self.requestUrl = [NSString stringWithFormat:@"%@%@",arr[0],limitStr];
+    }
+    switch (buttonIndex) {
+        case 0:
+            _limitStr = @"看全部";
+            break;
+        case 1:
+            _limitStr = @"只看女";
+            break;
+        case 2:
+            _limitStr = @"只看男";
+            break;
+        default:
+            break;
+    }
+    
+    
+    [self loadData];
+}
+
 #pragma 加载
+
+- (CLLocationManager *)locationManager{
+    if (!_locationManager) {
+        //创建定位对象
+        _locationManager = [[CLLocationManager alloc] init];
+        _locationManager.delegate = self;
+        _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        _locationManager.distanceFilter =100.0;
+        [_locationManager requestWhenInUseAuthorization];
+    }
+    return _locationManager;
+}
+
+
 - (UICollectionView *)nearCollectView{
     if (!_nearCollectView) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
@@ -146,6 +207,7 @@ static NSString * identifier = @"NearById";
         _nearCollectView.delegate = self;
         _nearCollectView.dataSource = self;
         [_nearCollectView registerClass:[NearCell class] forCellWithReuseIdentifier:identifier];
+        [_nearCollectView registerNib:[UINib nibWithNibName:@"NearHeadReusableView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"NearHeadReusableViewId"];
     }
     return _nearCollectView;
 }
@@ -157,11 +219,20 @@ static NSString * identifier = @"NearById";
     return _dataArr;
 }
 
+- (UIActionSheet *)actionSheet{
+    if (!_actionSheet) {
+        _actionSheet = [[UIActionSheet alloc]initWithTitle:@"" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"看全部",@"只看女",@"只看男" ,nil];
+    }
+    return _actionSheet;
+}
+
+#pragma dealloc
 - (void)dealloc{
     self.nearCollectView.dataSource = nil;
     self.nearCollectView.delegate = nil;
     self.locationManager.delegate = nil;
     
+    //恢复原设置
     SDImageCache *canche = [SDImageCache sharedImageCache];
     canche.shouldDecompressImages = SDImageCacheOldShouldDecompressImages;
     

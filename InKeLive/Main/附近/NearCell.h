@@ -10,9 +10,11 @@
 #import "NearModel.h"
 
 @interface NearCell : UICollectionViewCell
-
 //头像
 @property (nonatomic,strong)UIImageView *iconImageView;
+
+//等级
+@property (nonatomic,strong)UIImageView *rankImageView;
 
 //距离
 @property (nonatomic,strong)UILabel *distanceLabel;

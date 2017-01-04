@@ -15,7 +15,7 @@
 #import "MJAnimHeader.h"
 
 // 映客接口
-#define INKeUrl [NSString stringWithFormat:@"http://service.inke.com/api/live/gettop?lc=0000000000000045&cc=TG0001&cv=IK3.8.30_Iphone&proto=7&idfa=768901CC-814F-4358-8F71-F54BA16B251A&idfv=F5B7A445-841C-4D49-A4DB-887B9D31BDDB&devi=03b0ccddf1a8112717b7533d089d9bb448c50e6e&osversion=ios_10.000000&ua=iPhone8_1&imei=&imsi=&uid=139587564&sid=200JUbbvFT8FKXtTjZlDyh9VsrEF8uRAPSt3B8oMi2F4i0k0gsjA&conn=wifi&mtid=cef7f9ee1bbc1d9f01921eea68b0218a&mtxid=d4ee73ae06c&logid=133,5,124&count=5&multiaddr=1&s_sg=ec6dd66c26acc0cbd70caf2099810430&s_sc=100&s_st=1483420987"]
+#define INKeUrl [NSString stringWithFormat:@"http://service.inke.com/api/live/simpleall?lc=0000000000000045&cc=TG0001&cv=IK3.8.30_Iphone&proto=7&idfa=768901CC-814F-4358-8F71-F54BA16B251A&idfv=F5B7A445-841C-4D49-A4DB-887B9D31BDDB&devi=03b0ccddf1a8112717b7533d089d9bb448c50e6e&osversion=ios_10.000000&ua=iPhone8_1&imei=&imsi=&uid=139587564&sid=200JUbbvFT8FKXtTjZlDyh9VsrEF8uRAPSt3B8oMi2F4i0k0gsjA&conn=wifi&mtid=cef7f9ee1bbc1d9f01921eea68b0218a&mtxid=d4ee73ae06c&logid=133,5,124&s_sg=807c06fa2b02559263e434caeb4d26e0&s_sc=100&s_st=1483422484"]
 
 
 @interface MainViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -69,6 +69,12 @@
             inKeModel.nick = dic[@"creator"][@"nick"];
             inKeModel.online_users = [NSString stringWithFormat:@"%@",dic[@"online_users"]];
             [self.dataArr addObject:inKeModel];
+            
+            //只显示10条信息
+            if (self.dataArr.count > 10) {
+                break;
+            }
+            
         }
         [self.mainTableView reloadData];
         [self.mainTableView.mj_header endRefreshing];

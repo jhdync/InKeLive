@@ -124,6 +124,10 @@
 		633D8D9E1E0796010087BD77 /* offBtnBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 633D8D931E0796010087BD77 /* offBtnBg.png */; };
 		633D8D9F1E0796010087BD77 /* onBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 633D8D941E0796010087BD77 /* onBtn.png */; };
 		633D8DA01E0796010087BD77 /* onBtnBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 633D8D951E0796010087BD77 /* onBtnBg.png */; };
+		633E2DF81E1CA1EA0049C9E8 /* index.plist in Resources */ = {isa = PBXBuildFile; fileRef = 633E2DF71E1CA1EA0049C9E8 /* index.plist */; };
+		633E2DFC1E1CA6500049C9E8 /* NearHeadReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 633E2DFA1E1CA6500049C9E8 /* NearHeadReusableView.m */; };
+		633E2DFD1E1CA6500049C9E8 /* NearHeadReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 633E2DFB1E1CA6500049C9E8 /* NearHeadReusableView.xib */; };
+		633E2DFF1E1CBE860049C9E8 /* Candara.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 633E2DFE1E1CBDE10049C9E8 /* Candara.ttf */; };
 		63402ED91E1244DD002F6661 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63402ED81E1244DD002F6661 /* MainViewController.m */; };
 		63402EDF1E124534002F6661 /* NearbyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63402EDD1E124534002F6661 /* NearbyController.m */; };
 		63402EF11E124611002F6661 /* NearModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 63402EF01E124611002F6661 /* NearModel.m */; };
@@ -411,6 +415,11 @@
 		633D8D931E0796010087BD77 /* offBtnBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = offBtnBg.png; sourceTree = "<group>"; };
 		633D8D941E0796010087BD77 /* onBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onBtn.png; sourceTree = "<group>"; };
 		633D8D951E0796010087BD77 /* onBtnBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = onBtnBg.png; sourceTree = "<group>"; };
+		633E2DF71E1CA1EA0049C9E8 /* index.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = index.plist; sourceTree = "<group>"; };
+		633E2DF91E1CA6500049C9E8 /* NearHeadReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearHeadReusableView.h; sourceTree = "<group>"; };
+		633E2DFA1E1CA6500049C9E8 /* NearHeadReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearHeadReusableView.m; sourceTree = "<group>"; };
+		633E2DFB1E1CA6500049C9E8 /* NearHeadReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NearHeadReusableView.xib; sourceTree = "<group>"; };
+		633E2DFE1E1CBDE10049C9E8 /* Candara.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Candara.ttf; sourceTree = "<group>"; };
 		63402ED71E1244DD002F6661 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		63402ED81E1244DD002F6661 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		63402EDD1E124534002F6661 /* NearbyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearbyController.m; sourceTree = "<group>"; };
@@ -802,6 +811,9 @@
 			children = (
 				63402EFD1E124723002F6661 /* NearCell.h */,
 				63402EFC1E124723002F6661 /* NearCell.m */,
+				633E2DF91E1CA6500049C9E8 /* NearHeadReusableView.h */,
+				633E2DFA1E1CA6500049C9E8 /* NearHeadReusableView.m */,
+				633E2DFB1E1CA6500049C9E8 /* NearHeadReusableView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -951,6 +963,8 @@
 		6357A5D41DFE32B2001E77AF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				633E2DFE1E1CBDE10049C9E8 /* Candara.ttf */,
+				633E2DF71E1CA1EA0049C9E8 /* index.plist */,
 				6302FD911E1B89BD007122D3 /* yipitiezhiNormal.bundle */,
 				63D39FD41E01AD300073F07C /* images */,
 				6357A5D51DFE32B2001E77AF /* main.m */,
@@ -1358,6 +1372,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				633E2DFF1E1CBE860049C9E8 /* Candara.ttf in Resources */,
 				633282331E024CB400EC018B /* meteor_after_8.png in Resources */,
 				6302FE111E1B9DD9007122D3 /* yipitiezhi016 16-51-33-704.png in Resources */,
 				6302FE071E1B9DD9007122D3 /* yipitiezhi011 16-51-33-705.png in Resources */,
@@ -1411,6 +1426,7 @@
 				63D3A0001E01AD300073F07C /* refresh_fly_0015.png in Resources */,
 				6302FE1D1E1B9DD9007122D3 /* yipitiezhi022 16-51-33-689.png in Resources */,
 				6332820E1E024BBA00EC018B /* heart4@2x.png in Resources */,
+				633E2DF81E1CA1EA0049C9E8 /* index.plist in Resources */,
 				63D39FF51E01AD300073F07C /* refresh_fly_004.png in Resources */,
 				6302FE201E1B9DD9007122D3 /* yipitiezhi023.png in Resources */,
 				63D39FF41E01AD300073F07C /* refresh_fly_003.png in Resources */,
@@ -1509,6 +1525,7 @@
 				6332820D1E024BBA00EC018B /* heart3@2x.png in Resources */,
 				6302FE221E1B9DD9007122D3 /* yipitiezhi024.png in Resources */,
 				633282441E024CB400EC018B /* meteor_after_25.png in Resources */,
+				633E2DFD1E1CA6500049C9E8 /* NearHeadReusableView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1586,6 +1603,7 @@
 				633D8D771E0791B20087BD77 /* TYImageCache.m in Sources */,
 				633D8D741E0791B20087BD77 /* NSMutableAttributedString+TY.m in Sources */,
 				63402F121E1247F2002F6661 /* LiveViewController.m in Sources */,
+				633E2DFC1E1CA6500049C9E8 /* NearHeadReusableView.m in Sources */,
 				633281FD1E02467000EC018B /* FireworksViews.m in Sources */,
 				633D8D791E0791B20087BD77 /* TYLinkTextStorage.m in Sources */,
 				633D8D9A1E0796010087BD77 /* KeyBoardInputView.m in Sources */,

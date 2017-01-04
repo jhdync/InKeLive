@@ -38,7 +38,7 @@
     _nameLabel = [[UILabel alloc]init];
     _nameLabel.numberOfLines = 1;
     _nameLabel.textColor = [UIColor grayColor];
-    _nameLabel.font = [UIFont systemFontOfSize:15];
+    _nameLabel.font = [UIFont fontWithName:@"Candara" size:15];
     [self.contentView addSubview:_nameLabel];
     [_nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_iconImageView.mas_top);
@@ -50,7 +50,7 @@
     
     _cityLabel = [[UILabel alloc]init];
     _cityLabel.textColor = [UIColor grayColor];
-    _cityLabel.font = [UIFont systemFontOfSize:13];
+    _cityLabel.font = [UIFont fontWithName:@"Candara" size:13];
     [self.contentView addSubview:_cityLabel];
     [_cityLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_nameLabel.mas_bottom).offset(3);

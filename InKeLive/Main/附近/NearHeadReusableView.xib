@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="NearHeadReusableView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在直播" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bda-di-uD2">
+                    <rect key="frame" x="52" y="15" width="67" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="1I2-AC-ncD"/>
+                        <constraint firstAttribute="width" constant="67" id="UU4-mH-TF9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nearby_icon_now_live" translatesAutoresizingMaskIntoConstraints="NO" id="yL8-WI-OBG">
+                    <rect key="frame" x="16" y="16" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="3fZ-3K-nA1"/>
+                        <constraint firstAttribute="height" constant="20" id="XqK-Kq-Iq8"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHw-NB-Vrs">
+                    <rect key="frame" x="242" y="16" width="62" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="62" id="1vO-Hi-dl6"/>
+                        <constraint firstAttribute="height" constant="21" id="gFZ-0K-EP8"/>
+                    </constraints>
+                    <state key="normal" title="看全部">
+                        <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="chooseClick:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="LAA-ss-htg"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="yL8-WI-OBG" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="16" id="5Er-pS-6Tz"/>
+                <constraint firstItem="yL8-WI-OBG" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="16" id="76m-UJ-PLA"/>
+                <constraint firstItem="yL8-WI-OBG" firstAttribute="bottom" secondItem="Bda-di-uD2" secondAttribute="bottom" id="99O-yK-yd7"/>
+                <constraint firstItem="rHw-NB-Vrs" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="16" id="A18-1d-zLY"/>
+                <constraint firstAttribute="bottom" secondItem="rHw-NB-Vrs" secondAttribute="bottom" constant="13" id="HES-tK-nWu"/>
+                <constraint firstAttribute="trailing" secondItem="rHw-NB-Vrs" secondAttribute="trailing" constant="16" id="Nqf-at-4rA"/>
+                <constraint firstItem="Bda-di-uD2" firstAttribute="leading" secondItem="yL8-WI-OBG" secondAttribute="trailing" constant="16" id="Ojc-KN-zl1"/>
+            </constraints>
+            <connections>
+                <outlet property="chooseButton" destination="rHw-NB-Vrs" id="QnN-sP-tah"/>
+            </connections>
+            <point key="canvasLocation" x="-400" y="38"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="nearby_icon_now_live" width="14" height="14"/>
+    </resources>
+</document>

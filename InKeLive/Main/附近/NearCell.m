@@ -21,19 +21,42 @@
 - (void)createSubViews{
     [self addSubview:self.iconImageView];
     [self addSubview:self.distanceLabel];
+    [self addSubview:self.rankImageView];
+
     [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self);
         make.bottom.equalTo(self).offset(-25);
     }];
+
+    [self.rankImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.iconImageView.mas_bottom).offset(4);
+        make.left.equalTo(self);
+        make.bottom.equalTo(self).offset(-4);
+        make.width.equalTo(@36);
+    }];
     
     [self.distanceLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.bottom.right.equalTo(self);
+        make.left.equalTo(self.rankImageView.mas_right).offset(5);
+        make.bottom.right.equalTo(self);
         make.top.equalTo(self.iconImageView.mas_bottom);
     }];
 }
 
-
+//距离、定位、图片真实，等级随机取
 - (void)updateCell:(NearModel *)nearModel{
+    
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"plist"];
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
+    
+    NSArray *rankArr = [data allKeys];
+    
+    int index = arc4random()%rankArr.count;
+    
+    NSString *rankUrl = rankArr[index];
+    
+    //随机取一个等级吧
+    [self.rankImageView sd_setImageWithURL:[NSURL URLWithString:rankUrl] placeholderImage:[UIImage imageNamed:@"leavel_empty"] options:SDWebImageRetryFailed];
+    
     [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:nearModel.portrait] placeholderImage:[UIImage imageNamed:@"live_empty_bg"] options:SDWebImageRetryFailed|SDWebImageLowPriority];
     if (nearModel.distance.length > 0) {
         self.distanceLabel.text = [NSString stringWithFormat:@"%@",nearModel.distance];
@@ -48,32 +71,8 @@
     }
 }
 
-- (UIImage * _Nullable)imageCompressForWidth:(UIImage * _Nonnull)sourceImage targetWidth:(CGFloat)defineWidth{
-    //根据原图片计算值压缩后的尺寸
-    CGSize imageSize = sourceImage.size;
-    CGFloat bili = imageSize.width / imageSize.height;
-    CGFloat width = defineWidth * 2;
-    CGFloat height = width * bili;
-    
-    //开启绘图
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(width, height), 1, 1);
-    
-    //绘图到当前上下文
-    [sourceImage drawInRect:CGRectMake(0, 0, width, height)];
-    
-    //获取新图片
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    
-    //关闭图片绘制
-    UIGraphicsEndImageContext();
-    
-    //返回图片
-    return newImage;
-}
-
-
 - (void)showAnimation{
-    self.iconImageView.layer.transform = CATransform3DMakeScale(0.1, 0.1, 1);
+    self.iconImageView.layer.transform = CATransform3DMakeScale(0.5, 0.5, 1);
     [UIView animateWithDuration:0.25 animations:^{
         self.iconImageView.layer.transform = CATransform3DMakeScale(1, 1, 1);
     }];
@@ -95,6 +94,13 @@
         _distanceLabel.font = [UIFont systemFontOfSize:15];
     }
     return _distanceLabel;
+}
+
+- (UIImageView *)rankImageView{
+    if (!_rankImageView) {
+        _rankImageView = [[UIImageView alloc]init];
+    }
+    return _rankImageView;
 }
 
 @end
