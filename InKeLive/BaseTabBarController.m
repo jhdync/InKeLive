@@ -36,8 +36,8 @@
     [self initChildViewControllers];
     
     //隐藏tabBar上的线
-//    [[UITabBar appearance] setShadowImage:[UIImage new]];
-//    [[UITabBar appearance] setBackgroundImage:[[UIImage alloc]init]];
+    [[UITabBar appearance] setShadowImage:[UIImage new]];
+    [[UITabBar appearance] setBackgroundImage:[[UIImage alloc]init]];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -4,7 +4,7 @@
 //
 //  Created by 1 on 2017/1/3.
 //  Copyright © 2017年 jh. All rights reserved.
-//
+// 送礼物view
 
 #import "SendGiftView.h"
 #import "MyControlTool.h"

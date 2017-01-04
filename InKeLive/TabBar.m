@@ -40,7 +40,7 @@
     
     [super layoutSubviews];
     
-    self.cameraButton.centerY = self.height * 0.5;
+    self.cameraButton.centerY = self.height * 0.125;
     
     CGFloat tabBarItemWidth = self.width / 3;
     self.cameraButton.centerX= self.width * 0.5;

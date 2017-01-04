@@ -4,7 +4,7 @@
 //
 //  Created by 1 on 2017/1/4.
 //  Copyright © 2017年 jh. All rights reserved.
-//
+//礼物cell
 
 #import "GiftViewCell.h"
 
