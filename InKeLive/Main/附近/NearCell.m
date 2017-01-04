@@ -34,7 +34,7 @@
 
 
 - (void)updateCell:(NearModel *)nearModel{
-    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:nearModel.portrait] placeholderImage:[UIImage imageNamed:@"live_empty_bg"]];
+    [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:nearModel.portrait] placeholderImage:[UIImage imageNamed:@"live_empty_bg"] options:SDWebImageRetryFailed|SDWebImageLowPriority];
     if (nearModel.distance.length > 0) {
         self.distanceLabel.text = [NSString stringWithFormat:@"%@",nearModel.distance];
     } else {
@@ -47,6 +47,30 @@
         }
     }
 }
+
+- (UIImage * _Nullable)imageCompressForWidth:(UIImage * _Nonnull)sourceImage targetWidth:(CGFloat)defineWidth{
+    //根据原图片计算值压缩后的尺寸
+    CGSize imageSize = sourceImage.size;
+    CGFloat bili = imageSize.width / imageSize.height;
+    CGFloat width = defineWidth * 2;
+    CGFloat height = width * bili;
+    
+    //开启绘图
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(width, height), 1, 1);
+    
+    //绘图到当前上下文
+    [sourceImage drawInRect:CGRectMake(0, 0, width, height)];
+    
+    //获取新图片
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    //关闭图片绘制
+    UIGraphicsEndImageContext();
+    
+    //返回图片
+    return newImage;
+}
+
 
 - (void)showAnimation{
     self.iconImageView.layer.transform = CATransform3DMakeScale(0.1, 0.1, 1);

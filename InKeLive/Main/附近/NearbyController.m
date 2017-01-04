@@ -18,6 +18,9 @@
 #define SideWh (SCREEN_WIDTH - 2 * margin)/3
 #define Ratio 1.3
 
+static BOOL SDImageCacheOldShouldDecompressImages = YES;
+static BOOL SDImagedownloderOldShouldDecompressImages = YES;
+
 static NSString * identifier = @"NearById";
 
 @interface NearbyController ()<UICollectionViewDelegateFlowLayout,UICollectionViewDataSource,UICollectionViewDelegate,CLLocationManagerDelegate>{
@@ -35,6 +38,14 @@ static NSString * identifier = @"NearById";
      [self.view addSubview:self.nearCollectView];
     [self.locationManager startUpdatingLocation];
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    SDImageCache *canche = [SDImageCache sharedImageCache];
+    SDImageCacheOldShouldDecompressImages = canche.shouldDecompressImages;
+    canche.shouldDecompressImages = NO;
+    
+    SDWebImageDownloader *downloder = [SDWebImageDownloader sharedDownloader];
+    SDImagedownloderOldShouldDecompressImages = downloder.shouldDecompressImages;
+    downloder.shouldDecompressImages = NO;
 }
 
 - (void)setUpLocation{
@@ -144,6 +155,18 @@ static NSString * identifier = @"NearById";
         _dataArr = [NSMutableArray array];
     }
     return _dataArr;
+}
+
+- (void)dealloc{
+    self.nearCollectView.dataSource = nil;
+    self.nearCollectView.delegate = nil;
+    self.locationManager.delegate = nil;
+    
+    SDImageCache *canche = [SDImageCache sharedImageCache];
+    canche.shouldDecompressImages = SDImageCacheOldShouldDecompressImages;
+    
+    SDWebImageDownloader *downloder = [SDWebImageDownloader sharedDownloader];
+    downloder.shouldDecompressImages = SDImagedownloderOldShouldDecompressImages;
 }
 
 

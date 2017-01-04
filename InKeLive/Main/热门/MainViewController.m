@@ -131,4 +131,9 @@
     self.navigationController.navigationBarHidden = NO;
 }
 
+- (void)dealloc{
+    self.mainTableView.dataSource = nil;
+    self.mainTableView.delegate = nil;
+}
+
 @end

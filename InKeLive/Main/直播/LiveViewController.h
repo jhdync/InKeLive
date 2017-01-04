@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "BottomView.h"
 #import "LivingItem.h"
-#import "GiftView.h"
 #import "KeyBoardInputView.h"
 #import "MessageTableView.h"
 #import "DanmuLaunchView.h"

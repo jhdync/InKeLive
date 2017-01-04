@@ -860,6 +860,10 @@
     return NO;
 }
 
+- (void)dealloc{
+    [_timer invalidate];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

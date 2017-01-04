@@ -137,7 +137,6 @@
 		63402F111E1247F2002F6661 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63402F0C1E1247F2002F6661 /* HomeViewController.m */; };
 		63402F121E1247F2002F6661 /* LiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63402F0E1E1247F2002F6661 /* LiveViewController.m */; };
 		63402F131E1247F2002F6661 /* LiveViewController+GiftAnnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 63402F101E1247F2002F6661 /* LiveViewController+GiftAnnimation.m */; };
-		63402F181E124805002F6661 /* GiftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63402F151E124805002F6661 /* GiftView.m */; };
 		63402F191E124805002F6661 /* BottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63402F171E124805002F6661 /* BottomView.m */; };
 		63402F1C1E124819002F6661 /* GIftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 63402F1A1E124819002F6661 /* GIftCell.m */; };
 		63402F1F1E124ADD002F6661 /* EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63402F1E1E124ADD002F6661 /* EmptyView.m */; };
@@ -438,8 +437,6 @@
 		63402F0E1E1247F2002F6661 /* LiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveViewController.m; sourceTree = "<group>"; };
 		63402F0F1E1247F2002F6661 /* LiveViewController+GiftAnnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LiveViewController+GiftAnnimation.h"; sourceTree = "<group>"; };
 		63402F101E1247F2002F6661 /* LiveViewController+GiftAnnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LiveViewController+GiftAnnimation.m"; sourceTree = "<group>"; };
-		63402F141E124805002F6661 /* GiftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GiftView.h; sourceTree = "<group>"; };
-		63402F151E124805002F6661 /* GiftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GiftView.m; sourceTree = "<group>"; };
 		63402F161E124805002F6661 /* BottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BottomView.h; sourceTree = "<group>"; };
 		63402F171E124805002F6661 /* BottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BottomView.m; sourceTree = "<group>"; };
 		63402F1A1E124819002F6661 /* GIftCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GIftCell.m; sourceTree = "<group>"; };
@@ -873,8 +870,6 @@
 				63402EF91E12470F002F6661 /* AnchorView.m */,
 				63402F031E12474A002F6661 /* TopTitleView.h */,
 				63402F021E12474A002F6661 /* TopTitleView.m */,
-				63402F141E124805002F6661 /* GiftView.h */,
-				63402F151E124805002F6661 /* GiftView.m */,
 				63402F161E124805002F6661 /* BottomView.h */,
 				63402F171E124805002F6661 /* BottomView.m */,
 				63402F1B1E124819002F6661 /* GIftCell.h */,
@@ -1615,7 +1610,6 @@
 				63FB93971E0378E500C8A84A /* NHPlaneViews.m in Sources */,
 				63402F1C1E124819002F6661 /* GIftCell.m in Sources */,
 				63402EDF1E124534002F6661 /* NearbyController.m in Sources */,
-				63402F181E124805002F6661 /* GiftView.m in Sources */,
 				6357A6281DFE4DB1001E77AF /* UIView+Frame.m in Sources */,
 				633D8D751E0791B20087BD77 /* TYAttributedLabel.m in Sources */,
 				63402F041E12474A002F6661 /* TopTitleView.m in Sources */,
