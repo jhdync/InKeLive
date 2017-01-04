@@ -25,9 +25,6 @@
 //关闭直播
 @property (nonatomic,strong)UIButton *closeButton;
 
-////连麦
-//@property (nonatomic,strong)UIButton *handupButton;
-
 //连麦视屏窗口数
 @property (nonatomic,strong)NSMutableArray *remoteArray;
 
@@ -35,9 +32,6 @@
 @property (nonatomic, nonnull,strong)NSMutableArray *platformArr;
 
 @property (nonatomic,strong)NSString *adressStr;
-
-////在线人数
-//@property (nonatomic, strong) UILabel *lineNumLabel;
 
 @property (nonatomic, strong) NSString *nickName;
 
@@ -817,6 +811,12 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBarHidden = YES;
+}
+
+- (void)dealloc{
+    self.guestKit.rtc_delegate = nil;
+    self.keyBoardView.delegate = nil;
+    self.presentView.delegate = nil;
 }
 
 @end

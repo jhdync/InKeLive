@@ -55,7 +55,7 @@
     NSString *rankUrl = rankArr[index];
     
     //随机取一个等级吧
-    [self.rankImageView sd_setImageWithURL:[NSURL URLWithString:rankUrl] placeholderImage:[UIImage imageNamed:@"leavel_empty"] options:SDWebImageRetryFailed];
+    [self.rankImageView sd_setImageWithURL:[NSURL URLWithString:rankUrl] placeholderImage:[UIImage imageNamed:@"leavel_empty"] options:SDWebImageRetryFailed|SDWebImageLowPriority];
     
     [self.iconImageView sd_setImageWithURL:[NSURL URLWithString:nearModel.portrait] placeholderImage:[UIImage imageNamed:@"live_empty_bg"] options:SDWebImageRetryFailed|SDWebImageLowPriority];
     if (nearModel.distance.length > 0) {
