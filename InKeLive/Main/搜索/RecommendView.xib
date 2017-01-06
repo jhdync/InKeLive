@@ -21,14 +21,14 @@
                         <constraint firstAttribute="width" constant="54" id="OVD-R5-SPs"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <state key="normal" title="更多 &gt;">
+                    <state key="normal">
                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="recommendClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="VPV-GK-An8"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="好声音" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Vh-md-3jM">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日推荐" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Vh-md-3jM">
                     <rect key="frame" x="15" y="10" width="85" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="85" id="tuG-uo-m34"/>
