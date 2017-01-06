@@ -140,7 +140,7 @@ static NSString * identifier = @"NearById";
     if (index == 1) {
         return;
     }
-    self.requestUrl = [NSString stringWithFormat:@"http:/service.ingkee.com/api/live/near_recommend?uid=247164228&latitude=%f&longitude=%f",newLocation.coordinate.latitude,newLocation.coordinate.longitude];
+    self.requestUrl = [NSString stringWithFormat:NearByUrl,newLocation.coordinate.latitude,newLocation.coordinate.longitude];
     [self.locationManager stopUpdatingLocation];
     [self setUpLocation];
     index++;
@@ -148,7 +148,7 @@ static NSString * identifier = @"NearById";
 //定位失败
 - (void)locationManager:(CLLocationManager *)manager
        didFailWithError:(NSError *)error {
-    self.requestUrl = [NSString stringWithFormat:@"http:/service.ingkee.com/api/live/near_recommend?uid=247164228&latitude=31.347102&longitude=121.5117"];
+    self.requestUrl = [NSString stringWithFormat:NearFakeUrl];
     [self setUpLocation];
 }
 

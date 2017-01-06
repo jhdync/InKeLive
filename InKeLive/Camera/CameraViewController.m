@@ -384,7 +384,7 @@
                 [self.hosterKit clear];
                 self.hosterKit = nil;
             }
-            [self hideKeyBoard];
+            [AutoCommon hideKeyBoard];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [self dismissViewControllerAnimated:YES completion:nil];
             });
@@ -830,34 +830,6 @@
     maskLayerAnimation.duration = 0.8f;
     [maskLayer addAnimation:maskLayerAnimation forKey:@"path"];
     self.view.layer.mask = maskLayer;
-}
-
-//关闭键盘
-- (void)hideKeyBoard{
-    
-    for (UIWindow* window in [UIApplication sharedApplication].windows)
-    {
-        for (UIView* view in window.subviews)
-        {
-            [self dismissAllKeyBoardInView:view];
-        }
-    }
-}
-
-- (BOOL) dismissAllKeyBoardInView:(UIView *)view{
-    if([view isFirstResponder])
-    {
-        [view resignFirstResponder];
-        return YES;
-    }
-    for(UIView *subView in view.subviews)
-    {
-        if([self dismissAllKeyBoardInView:subView])
-        {
-            return YES;
-        }
-    }
-    return NO;
 }
 
 - (void)dealloc{

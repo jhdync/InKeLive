@@ -19,6 +19,8 @@
 #define ATLog(...)
 #endif
 
+#import "PortConfiguration.h"
+
 #import <RTMPCHybirdEngine/RTMPCHybirdEngineKit.h>
 
 #import "UIView+Frame.h"
@@ -38,6 +40,8 @@
 #import "UMSocialCore.h"
 
 #import <ReactiveCocoa.h>
+
+#import "AutoCommon.h"
 
 //RGB
 #define RGBA(r, g, b, a)    [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]

@@ -9,4 +9,5 @@ pod 'MBProgressHUD', '~> 1.0.0'
 pod 'ReactiveCocoa', '~> 2.4.7'
 pod ‘UMengUShare/UI’
 pod ‘UMengUShare/Social/WeChat'
+ pod 'Reachability', '~> 3.2'
 end

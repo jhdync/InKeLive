@@ -24,6 +24,7 @@ PODS:
   - MBProgressHUD (1.0.0)
   - MJExtension (3.0.13)
   - MJRefresh (3.0.8)
+  - Reachability (3.2)
   - ReactiveCocoa (2.4.7):
     - ReactiveCocoa/UI (= 2.4.7)
   - ReactiveCocoa/Core (2.4.7):
@@ -48,6 +49,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 1.0.0)
   - MJExtension (~> 3.0.13)
   - MJRefresh (~> 3.0.7)
+  - Reachability (~> 3.2)
   - ReactiveCocoa (~> 2.4.7)
   - SDWebImage (~> 3.7.3)
   - UMengUShare/Social/WeChat
@@ -59,10 +61,11 @@ SPEC CHECKSUMS:
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: fafde8f18f4afd66b434331a9beb67a6c0264056
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   ReactiveCocoa: eb38dee0a0e698f73a9b25e5c1faea2bb4c79240
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   UMengUShare: 700415220ee9df4051d27d8a31fb1286a8f3b4e6
 
-PODFILE CHECKSUM: 88149d80822b181dc9b770f5c90fe69da94f6fb4
+PODFILE CHECKSUM: 5c07b0bb6b917b58c8a44ede0ab46f3ea83754f9
 
 COCOAPODS: 1.1.1

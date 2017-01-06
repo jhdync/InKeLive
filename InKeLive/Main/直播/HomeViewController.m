@@ -11,6 +11,7 @@
 #import "AttentionController.h"
 #import "NearbyController.h"
 #import "BaseViewController.h"
+#import "SearchViewController.h"
 
 @interface HomeViewController ()<UIScrollViewDelegate>
 
@@ -26,14 +27,13 @@
     self.navigationItem.titleView = self.titleView;
     UIImage *leftImg = [UIImage imageNamed:@"left_search"];
     leftImg = [leftImg imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:leftImg style:UIBarButtonItemStylePlain target:self action:nil];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:leftImg style:UIBarButtonItemStylePlain target:self action:@selector(enterSearchClick)];
     UIImage *rightImg = [UIImage imageNamed:@"right_message"];
     rightImg = [rightImg imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:rightImg style:UIBarButtonItemStylePlain target:self action:nil];
     [self.view addSubview:self.homeScrollView];
     [self initChildViewControllers];
 }
-
 
 - (void)initChildViewControllers{
     //关注
@@ -61,6 +61,12 @@
     [self.titleView scrollMove:(scrollView.contentOffset.x/SCREEN_WIDTH + 50)];
 }
 
+- (void)enterSearchClick{
+    SearchViewController *searchVc = [[SearchViewController alloc]init];
+    BaseViewController *baseVc = [[BaseViewController alloc]initWithRootViewController:searchVc];
+    [self presentViewController:baseVc animated:YES completion:nil];
+}
+
 
 #pragma  加载
 - (TopTitleView *)titleView{
@@ -78,7 +84,7 @@
 
 - (UIScrollView *)homeScrollView{
     if (!_homeScrollView) {
-         self.edgesForExtendedLayout = UIRectEdgeNone;
+        self.edgesForExtendedLayout = UIRectEdgeNone;
         _homeScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 64 - 49)];
         _homeScrollView.contentSize = CGSizeMake(3 * SCREEN_WIDTH, 0);
         _homeScrollView.contentOffset = CGPointMake(SCREEN_WIDTH, 0);
