@@ -21,6 +21,8 @@
 
 @property (nonatomic,strong)UITableView *mainTableView;
 
+@property(nonatomic,assign)CGFloat historyY;
+
 @end
 
 @implementation MainViewController
@@ -120,7 +122,7 @@
 - (UITableView *)mainTableView{
     if (_mainTableView == nil) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
-        _mainTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 113) style:UITableViewStylePlain];
+        _mainTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-113) style:UITableViewStylePlain];
         _mainTableView.delegate  = self;
         _mainTableView.dataSource = self;
         _mainTableView.rowHeight = [UIScreen mainScreen].bounds.size.width * 1.3 + 1;

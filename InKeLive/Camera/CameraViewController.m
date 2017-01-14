@@ -57,7 +57,7 @@
 // 聊天输入框
 @property (nonatomic, strong) KeyBoardInputView *keyBoardView;
 
- // 聊天面板
+// 聊天面板
 @property (nonatomic, strong) MessageTableView *messageTableView;
 
 @property (nonatomic, strong) DanmuLaunchView *danmuView;
@@ -81,7 +81,6 @@
     _timeOut = 3;
     [self creatUI];
     
-    //[self getAdress];
     [self prepareStream];
 }
 
@@ -110,15 +109,6 @@
     [self.view addGestureRecognizer:tapGesture];
 }
 
-//- (void)getAdress{
-//    WEAKSELF;
-//    [[NetUtil shead]getRTMPAddress:@"test001" withAppName:@"huilive" withType:1 withStreamId:@"123456" withSecretKey:nil withReturn:^(NSDictionary *dict, int code) {
-//        if (dict && code == 200) {
-//            weakSelf.adressStr = [dict objectForKey:@"url"];
-//        }
-//    }];
-//}
-
 //rtc连麦
 - (void)prepareRtc{
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"hostID",@"hosterId",self.rtmpUrl,@"rtmp_url",self.hlsUrl,@"hls_url",self.livingName?self.livingName:[self getTopName],@"topic",self.randomStr,@"anyrtcId",[NSNumber numberWithBool:_isAudioLiving],@"isAudioOnly", nil];
@@ -133,7 +123,7 @@
 
 /**
  RTC连接结果的回调
-
+ 
  @param code 0成功
  @param strReason 原因
  */
@@ -145,7 +135,7 @@
 
 /**
  主播收到游客连麦申请
-
+ 
  @param strLivePeerID 游客在RTMPC服务的ID
  @param strCustomID 游客在自己平台的用户ID
  @param strUserData 游客在自己平台的一些相关信息
@@ -162,7 +152,7 @@
 
 /**
  主播收到游客挂断连麦
-
+ 
  @param strLivePeerID 游客在RTMP服务ID
  */
 - (void)OnRTCCancelLine:(NSString*)strLivePeerID{
@@ -214,7 +204,7 @@
 
 /**
  RTC关闭回调
-
+ 
  @param code 0成功
  @param strReason 原因
  */
@@ -235,7 +225,7 @@
 
 /**
  主播同意连麦，显示对方窗口
-
+ 
  @param strLivePeerID RTMP服务ID
  */
 - (void)OnRTCOpenVideoRender:(NSString*)strLivePeerID{
@@ -420,7 +410,7 @@
                 }
                 
                 //开始推流
-               [self.hosterKit StartPushRtmpStream:self.rtmpUrl];
+                [self.hosterKit StartPushRtmpStream:self.rtmpUrl];
                 //只有推流开始才能进行RTC连麦
                 [self prepareRtc];
             }
@@ -562,7 +552,7 @@
     pullView.frame = CGRectMake(CGRectGetWidth(self.view.frame)-videoWidth, (3 - num)*videoHeight, videoWidth, videoHeight);
     pullView.layer.borderColor = [UIColor grayColor].CGColor;
     pullView.layer.borderWidth = .5;
-            
+    
     UIButton *cButton = [UIButton buttonWithType:UIButtonTypeCustom];
     cButton.tag = 300+self.remoteArray.count;
     cButton.frame = CGRectMake(CGRectGetWidth(pullView.frame)-30,10, 20, 20);
@@ -830,10 +820,6 @@
     maskLayerAnimation.duration = 0.8f;
     [maskLayer addAnimation:maskLayerAnimation forKey:@"path"];
     self.view.layer.mask = maskLayer;
-}
-
-- (void)dealloc{
-    [_timer invalidate];
 }
 
 - (void)didReceiveMemoryWarning {

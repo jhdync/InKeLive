@@ -85,7 +85,7 @@
 - (UIScrollView *)homeScrollView{
     if (!_homeScrollView) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
-        _homeScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 64 - 49)];
+        _homeScrollView = [[UIScrollView alloc]initWithFrame:self.view.bounds];
         _homeScrollView.contentSize = CGSizeMake(3 * SCREEN_WIDTH, 0);
         _homeScrollView.contentOffset = CGPointMake(SCREEN_WIDTH, 0);
         _homeScrollView.showsHorizontalScrollIndicator = NO;

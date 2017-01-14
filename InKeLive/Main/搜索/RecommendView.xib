@@ -21,7 +21,7 @@
                         <constraint firstAttribute="width" constant="54" id="OVD-R5-SPs"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <state key="normal">
+                    <state key="normal" title="更多 &gt;">
                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>

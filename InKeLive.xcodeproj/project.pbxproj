@@ -162,6 +162,12 @@
 		63402F231E125128002F6661 /* live_empty_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63402F211E125128002F6661 /* live_empty_bg@2x.png */; };
 		63402F261E12605D002F6661 /* login@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63402F241E12605D002F6661 /* login@3x.png */; };
 		63402F271E12605D002F6661 /* login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63402F251E12605D002F6661 /* login@2x.png */; };
+		635587301E29C62900D1A209 /* hot.png in Resources */ = {isa = PBXBuildFile; fileRef = 6355872A1E29C62900D1A209 /* hot.png */; };
+		635587311E29C62900D1A209 /* live.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6355872B1E29C62900D1A209 /* live.jpg */; };
+		635587321E29C62900D1A209 /* near.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6355872C1E29C62900D1A209 /* near.jpg */; };
+		635587331E29C62900D1A209 /* person.png in Resources */ = {isa = PBXBuildFile; fileRef = 6355872D1E29C62900D1A209 /* person.png */; };
+		635587341E29C62900D1A209 /* search.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6355872E1E29C62900D1A209 /* search.jpg */; };
+		635587351E29C62900D1A209 /* send.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6355872F1E29C62900D1A209 /* send.jpg */; };
 		6357A5D61DFE32B2001E77AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6357A5D51DFE32B2001E77AF /* main.m */; };
 		6357A5D91DFE32B2001E77AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6357A5D81DFE32B2001E77AF /* AppDelegate.m */; };
 		6357A5EF1DFE32B2001E77AF /* InKeLiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6357A5EE1DFE32B2001E77AF /* InKeLiveTests.m */; };
@@ -492,6 +498,12 @@
 		63402F211E125128002F6661 /* live_empty_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "live_empty_bg@2x.png"; sourceTree = "<group>"; };
 		63402F241E12605D002F6661 /* login@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login@3x.png"; sourceTree = "<group>"; };
 		63402F251E12605D002F6661 /* login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login@2x.png"; sourceTree = "<group>"; };
+		6355872A1E29C62900D1A209 /* hot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hot.png; sourceTree = "<group>"; };
+		6355872B1E29C62900D1A209 /* live.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = live.jpg; sourceTree = "<group>"; };
+		6355872C1E29C62900D1A209 /* near.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = near.jpg; sourceTree = "<group>"; };
+		6355872D1E29C62900D1A209 /* person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = person.png; sourceTree = "<group>"; };
+		6355872E1E29C62900D1A209 /* search.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = search.jpg; sourceTree = "<group>"; };
+		6355872F1E29C62900D1A209 /* send.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = send.jpg; sourceTree = "<group>"; };
 		6357A5D11DFE32B2001E77AF /* InKeLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InKeLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6357A5D51DFE32B2001E77AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6357A5D71DFE32B2001E77AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -672,6 +684,7 @@
 		630483271E1F40F7004837C5 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				6355871D1E29C51000D1A209 /* effect */,
 				630483091E1F37AC004837C5 /* PortConfiguration.h */,
 				633E2DFE1E1CBDE10049C9E8 /* Candara.ttf */,
 				633E2DF71E1CA1EA0049C9E8 /* index.plist */,
@@ -1006,6 +1019,19 @@
 			children = (
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		6355871D1E29C51000D1A209 /* effect */ = {
+			isa = PBXGroup;
+			children = (
+				6355872A1E29C62900D1A209 /* hot.png */,
+				6355872B1E29C62900D1A209 /* live.jpg */,
+				6355872C1E29C62900D1A209 /* near.jpg */,
+				6355872D1E29C62900D1A209 /* person.png */,
+				6355872E1E29C62900D1A209 /* search.jpg */,
+				6355872F1E29C62900D1A209 /* send.jpg */,
+			);
+			path = effect;
 			sourceTree = "<group>";
 		};
 		6357A5C81DFE32B2001E77AF = {
@@ -1478,6 +1504,7 @@
 				6332820B1E024BBA00EC018B /* heart1@2x.png in Resources */,
 				6302FE051E1B9DD9007122D3 /* yipitiezhi010 16-51-33-688.png in Resources */,
 				6302FE171E1B9DD9007122D3 /* yipitiezhi019 16-51-33-528.png in Resources */,
+				635587341E29C62900D1A209 /* search.jpg in Resources */,
 				633282381E024CB400EC018B /* meteor_after_13.png in Resources */,
 				6302FE021E1B9DD9007122D3 /* yipitiezhi008.png in Resources */,
 				63A335341E02780000027174 /* ShipViews.xib in Resources */,
@@ -1493,6 +1520,7 @@
 				63A3352A1E02767F00027174 /* rocket-fire-1.png in Resources */,
 				6302FDFB1E1B9DD9007122D3 /* yipitiezhi05.png in Resources */,
 				6302FE0E1E1B9DD9007122D3 /* yipitiezhi014.png in Resources */,
+				635587351E29C62900D1A209 /* send.jpg in Resources */,
 				6332823B1E024CB400EC018B /* meteor_after_16.png in Resources */,
 				6304831F1E1F3B01004837C5 /* RecommendView.xib in Resources */,
 				633282421E024CB400EC018B /* meteor_after_23.png in Resources */,
@@ -1517,11 +1545,13 @@
 				63D39FFC1E01AD300073F07C /* refresh_fly_0011.png in Resources */,
 				63D3A0001E01AD300073F07C /* refresh_fly_0015.png in Resources */,
 				6302FE1D1E1B9DD9007122D3 /* yipitiezhi022 16-51-33-689.png in Resources */,
+				635587331E29C62900D1A209 /* person.png in Resources */,
 				6332820E1E024BBA00EC018B /* heart4@2x.png in Resources */,
 				633E2DF81E1CA1EA0049C9E8 /* index.plist in Resources */,
 				63D39FF51E01AD300073F07C /* refresh_fly_004.png in Resources */,
 				6302FE201E1B9DD9007122D3 /* yipitiezhi023.png in Resources */,
 				63D39FF41E01AD300073F07C /* refresh_fly_003.png in Resources */,
+				635587311E29C62900D1A209 /* live.jpg in Resources */,
 				6302FE161E1B9DD9007122D3 /* yipitiezhi018.png in Resources */,
 				63FB93AC1E037A4D00C8A84A /* plane-head.png in Resources */,
 				6302FE031E1B9DD9007122D3 /* yipitiezhi09.png in Resources */,
@@ -1532,12 +1562,14 @@
 				6302FE0A1E1B9DD9007122D3 /* yipitiezhi012.png in Resources */,
 				63402F271E12605D002F6661 /* login@2x.png in Resources */,
 				63FB93AB1E037A4D00C8A84A /* plane-tail.png in Resources */,
+				635587301E29C62900D1A209 /* hot.png in Resources */,
 				633D8D9D1E0796010087BD77 /* offBtn.png in Resources */,
 				6302FDF61E1B9DD9007122D3 /* yipitiezhi002.png in Resources */,
 				63D39FF81E01AD300073F07C /* refresh_fly_007.png in Resources */,
 				63D3A00E1E01AD300073F07C /* refresh_fly_0029.png in Resources */,
 				6332820C1E024BBA00EC018B /* heart2@2x.png in Resources */,
 				63D39FF61E01AD300073F07C /* refresh_fly_005.png in Resources */,
+				635587321E29C62900D1A209 /* near.jpg in Resources */,
 				6302FE061E1B9DD9007122D3 /* yipitiezhi010.png in Resources */,
 				63A3352D1E02767F00027174 /* rocket-fire-4.png in Resources */,
 				63D39FF71E01AD300073F07C /* refresh_fly_006.png in Resources */,
