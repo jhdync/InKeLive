@@ -402,8 +402,7 @@
 
 - (void)repareStartPlay{
     //初始化
-    self.guestKit = [[RTMPCGuestKit alloc] initWithDelegate:self withCaptureDevicePosition:RTMPC_SCRN_Portrait withLivingAudioOnly:NO];
-    
+    self.guestKit = [[RTMPCGuestKit alloc]initWithDelegate:self withCaptureDevicePosition:RTMPC_SCRN_Portrait withLivingAudioOnly:NO withAudioDetect:NO];
     
     //只支持rtmp流
     if (!self.livingItem) {

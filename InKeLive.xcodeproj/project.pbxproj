@@ -162,6 +162,9 @@
 		63402F231E125128002F6661 /* live_empty_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63402F211E125128002F6661 /* live_empty_bg@2x.png */; };
 		63402F261E12605D002F6661 /* login@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63402F241E12605D002F6661 /* login@3x.png */; };
 		63402F271E12605D002F6661 /* login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63402F251E12605D002F6661 /* login@2x.png */; };
+		634EF7A31EA8B03B00EDEB21 /* RTMPCHybirdEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634EF7A21EA8B03B00EDEB21 /* RTMPCHybirdEngine.framework */; };
+		634EF7A41EA8B06800EDEB21 /* RTMPCHybirdEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634EF7A21EA8B03B00EDEB21 /* RTMPCHybirdEngine.framework */; };
+		634EF7A51EA8B06800EDEB21 /* RTMPCHybirdEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 634EF7A21EA8B03B00EDEB21 /* RTMPCHybirdEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		635587301E29C62900D1A209 /* hot.png in Resources */ = {isa = PBXBuildFile; fileRef = 6355872A1E29C62900D1A209 /* hot.png */; };
 		635587311E29C62900D1A209 /* live.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6355872B1E29C62900D1A209 /* live.jpg */; };
 		635587321E29C62900D1A209 /* near.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6355872C1E29C62900D1A209 /* near.jpg */; };
@@ -172,8 +175,6 @@
 		6357A5D91DFE32B2001E77AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6357A5D81DFE32B2001E77AF /* AppDelegate.m */; };
 		6357A5EF1DFE32B2001E77AF /* InKeLiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6357A5EE1DFE32B2001E77AF /* InKeLiveTests.m */; };
 		6357A5FA1DFE32B2001E77AF /* InKeLiveUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6357A5F91DFE32B2001E77AF /* InKeLiveUITests.m */; };
-		6357A6081DFE35F6001E77AF /* RTMPCHybirdEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6357A6071DFE35F6001E77AF /* RTMPCHybirdEngine.framework */; };
-		6357A60A1DFE3635001E77AF /* RTMPCHybirdEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6357A6071DFE35F6001E77AF /* RTMPCHybirdEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6357A61C1DFE4C91001E77AF /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6357A61B1DFE4C91001E77AF /* CameraViewController.m */; };
 		6357A61F1DFE4C9F001E77AF /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6357A61E1DFE4C9F001E77AF /* PersonViewController.m */; };
 		6357A6281DFE4DB1001E77AF /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6357A6271DFE4DB1001E77AF /* UIView+Frame.m */; };
@@ -273,7 +274,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				6357A60A1DFE3635001E77AF /* RTMPCHybirdEngine.framework in Embed Frameworks */,
+				634EF7A51EA8B06800EDEB21 /* RTMPCHybirdEngine.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +499,7 @@
 		63402F211E125128002F6661 /* live_empty_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "live_empty_bg@2x.png"; sourceTree = "<group>"; };
 		63402F241E12605D002F6661 /* login@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login@3x.png"; sourceTree = "<group>"; };
 		63402F251E12605D002F6661 /* login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login@2x.png"; sourceTree = "<group>"; };
+		634EF7A21EA8B03B00EDEB21 /* RTMPCHybirdEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RTMPCHybirdEngine.framework; sourceTree = "<group>"; };
 		6355872A1E29C62900D1A209 /* hot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hot.png; sourceTree = "<group>"; };
 		6355872B1E29C62900D1A209 /* live.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = live.jpg; sourceTree = "<group>"; };
 		6355872C1E29C62900D1A209 /* near.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = near.jpg; sourceTree = "<group>"; };
@@ -515,7 +517,6 @@
 		6357A5F51DFE32B2001E77AF /* InKeLiveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InKeLiveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6357A5F91DFE32B2001E77AF /* InKeLiveUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InKeLiveUITests.m; sourceTree = "<group>"; };
 		6357A5FB1DFE32B2001E77AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6357A6071DFE35F6001E77AF /* RTMPCHybirdEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RTMPCHybirdEngine.framework; sourceTree = "<group>"; };
 		6357A61A1DFE4C91001E77AF /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		6357A61B1DFE4C91001E77AF /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		6357A61D1DFE4C9F001E77AF /* PersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
@@ -611,8 +612,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6357A6081DFE35F6001E77AF /* RTMPCHybirdEngine.framework in Frameworks */,
 				D625F1BB0A18D8AEBB1A58AB /* libPods-InKeLive.a in Frameworks */,
+				634EF7A31EA8B03B00EDEB21 /* RTMPCHybirdEngine.framework in Frameworks */,
+				634EF7A41EA8B06800EDEB21 /* RTMPCHybirdEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1021,6 +1023,14 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		634EF7A11EA8B03B00EDEB21 /* RTMPCHybirdEngine */ = {
+			isa = PBXGroup;
+			children = (
+				634EF7A21EA8B03B00EDEB21 /* RTMPCHybirdEngine.framework */,
+			);
+			path = RTMPCHybirdEngine;
+			sourceTree = "<group>";
+		};
 		6355871D1E29C51000D1A209 /* effect */ = {
 			isa = PBXGroup;
 			children = (
@@ -1059,7 +1069,7 @@
 		6357A5D31DFE32B2001E77AF /* InKeLive */ = {
 			isa = PBXGroup;
 			children = (
-				6357A6071DFE35F6001E77AF /* RTMPCHybirdEngine.framework */,
+				634EF7A11EA8B03B00EDEB21 /* RTMPCHybirdEngine */,
 				6357A6211DFE4CA7001E77AF /* Common */,
 				6357A6161DFE4C0A001E77AF /* Main */,
 				6357A6221DFE4CDA001E77AF /* NetWork */,
@@ -1933,6 +1943,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/InKeLive",
+					"$(PROJECT_DIR)/InKeLive/RTMPCHybirdEngine",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/InKeLive/InKeLive.pch";
 				INFOPLIST_FILE = InKeLive/Info.plist;
@@ -1997,6 +2008,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/InKeLive",
+					"$(PROJECT_DIR)/InKeLive/RTMPCHybirdEngine",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/InKeLive/InKeLive.pch";
 				INFOPLIST_FILE = InKeLive/Info.plist;

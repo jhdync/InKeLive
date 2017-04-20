@@ -15,7 +15,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = BackGroundColor;
+        self.backgroundColor = [UIColor whiteColor];
         [self addSubview:self.emptyImageView];
         [self addSubview:self.skipButton];
         [self.emptyImageView mas_makeConstraints:^(MASConstraintMaker *make) {

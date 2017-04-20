@@ -116,7 +116,7 @@
     //rtc的代理
     self.hosterKit.rtc_delegate = self;
     //打开RTC连麦功能
-    [self.hosterKit OpenRTCLine:self.randomStr andCustomID:@"主播端" andUserData:jsonString andRtcArea:@"CN"];
+    [self.hosterKit OpenRTCLine:self.randomStr andCustomID:@"主播端" andUserData:jsonString];
 }
 
 #pragma RTMPCHosterRtcDelegate
@@ -312,7 +312,8 @@
 #pragma 推流
 - (void)prepareStream{
     //初始化主播端  推流代理
-    self.hosterKit = [[RTMPCHosterKit alloc]initWithDelegate:self withCaptureDevicePosition:RTMPC_SCRN_Portrait withLivingAudioOnly:NO];
+    self.hosterKit = [[RTMPCHosterKit alloc]initWithDelegate:self withCaptureDevicePosition:RTMPC_SCRN_Portrait withLivingAudioOnly:NO withAudioDetect:NO];
+    
     //推流模式
     [self.hosterKit SetNetAdjustMode:RTMP_NA_Fast];
     [self.hosterKit SetVideoCapturer:self.view andUseFront:YES];
