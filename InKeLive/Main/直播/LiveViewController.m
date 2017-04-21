@@ -407,7 +407,7 @@
     //只支持rtmp流
     if (!self.livingItem) {
         //假数据  香港卫视rtmp://live.hkstv.hk.lxdns.com/live/hks  耀才财经台：rtmp://202.69.69.180:443/webcast/bshdlive-pc
-        [self.guestKit StartRtmpPlay:@"rtmp://live.hkstv.hk.lxdns.com/live/hks" andRender:self.showView];
+        [self.guestKit StartRtmpPlay:@"rtmp://202.69.69.180:443/webcast/bshdlive-pc" andRender:self.showView];
     } else{
         //如果有两部手机运行，且创建项目，可实现实时推流、拉流
         [self.guestKit StartRtmpPlay:self.livingItem.rtmp_url andRender:self.showView];
