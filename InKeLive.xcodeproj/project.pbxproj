@@ -163,8 +163,8 @@
 		63402F261E12605D002F6661 /* login@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63402F241E12605D002F6661 /* login@3x.png */; };
 		63402F271E12605D002F6661 /* login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63402F251E12605D002F6661 /* login@2x.png */; };
 		634EF7A31EA8B03B00EDEB21 /* RTMPCHybirdEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634EF7A21EA8B03B00EDEB21 /* RTMPCHybirdEngine.framework */; };
-		634EF7A41EA8B06800EDEB21 /* RTMPCHybirdEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634EF7A21EA8B03B00EDEB21 /* RTMPCHybirdEngine.framework */; };
-		634EF7A51EA8B06800EDEB21 /* RTMPCHybirdEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 634EF7A21EA8B03B00EDEB21 /* RTMPCHybirdEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		634EF7A61EA8B46F00EDEB21 /* RTMPCHybirdEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634EF7A21EA8B03B00EDEB21 /* RTMPCHybirdEngine.framework */; };
+		634EF7A71EA8B46F00EDEB21 /* RTMPCHybirdEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 634EF7A21EA8B03B00EDEB21 /* RTMPCHybirdEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		635587301E29C62900D1A209 /* hot.png in Resources */ = {isa = PBXBuildFile; fileRef = 6355872A1E29C62900D1A209 /* hot.png */; };
 		635587311E29C62900D1A209 /* live.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6355872B1E29C62900D1A209 /* live.jpg */; };
 		635587321E29C62900D1A209 /* near.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6355872C1E29C62900D1A209 /* near.jpg */; };
@@ -268,13 +268,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		6357A60B1DFE3635001E77AF /* Embed Frameworks */ = {
+		634EF7A81EA8B46F00EDEB21 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				634EF7A51EA8B06800EDEB21 /* RTMPCHybirdEngine.framework in Embed Frameworks */,
+				634EF7A71EA8B46F00EDEB21 /* RTMPCHybirdEngine.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -614,7 +614,7 @@
 			files = (
 				D625F1BB0A18D8AEBB1A58AB /* libPods-InKeLive.a in Frameworks */,
 				634EF7A31EA8B03B00EDEB21 /* RTMPCHybirdEngine.framework in Frameworks */,
-				634EF7A41EA8B06800EDEB21 /* RTMPCHybirdEngine.framework in Frameworks */,
+				634EF7A61EA8B46F00EDEB21 /* RTMPCHybirdEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1392,9 +1392,9 @@
 				6357A5CD1DFE32B2001E77AF /* Sources */,
 				6357A5CE1DFE32B2001E77AF /* Frameworks */,
 				6357A5CF1DFE32B2001E77AF /* Resources */,
-				6357A60B1DFE3635001E77AF /* Embed Frameworks */,
 				DA845E7E28ED0608F469E4B1 /* [CP] Embed Pods Frameworks */,
 				F79A3351A9923E1A0993BE9C /* [CP] Copy Pods Resources */,
+				634EF7A81EA8B46F00EDEB21 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
